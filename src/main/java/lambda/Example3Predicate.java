@@ -5,8 +5,12 @@ import java.util.function.Predicate;
 public class Example3Predicate {
 	public static void main(String[] args) {
 
-		Predicate<String> predicate1 = t -> t.startsWith("www");
-
+		Predicate<String> predicate1 = new Predicate<String>() {
+			@Override
+			public boolean test(String t) {
+				return t.startsWith("www");
+			}
+		};
 
 		Predicate<String> predicate2 = url -> url.startsWith("www");
 
